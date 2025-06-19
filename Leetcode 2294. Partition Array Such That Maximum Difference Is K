@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int partitionArray(vector<int>& nums, int k) {
+        
+        sort(nums.begin() , nums.end());
+
+        int r = -1;
+
+        int ans = 0;
+
+        for(int i = 0 ; i < nums.size() ; i++){
+
+            if(nums[i] > r){
+                ans++;
+                r = nums[i] + k;
+            }
+        }
+
+        return ans;
+    }
+};
